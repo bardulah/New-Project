@@ -6,6 +6,8 @@ from .decision_logger import DecisionLogger
 from .code_evolutor import CodeEvolutor
 from .meta_observer import MetaObserver
 from .swarm_spawner import SwarmSpawner
+from .pattern_matcher import PatternMatcher
+from .super_agent import SuperAgent
 
 __all__ = [
     'CialdiniScientist',
@@ -14,5 +16,7 @@ __all__ = [
     'DecisionLogger',
     'CodeEvolutor',
     'MetaObserver',
-    'SwarmSpawner'
+    'SwarmSpawner',
+    'PatternMatcher',
+    'SuperAgent'
 ]
