@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  psyche-edge:
+    build: .
+    container_name: psyche-edge-swarm
+    ports:
+      - "8501:8501"  # Streamlit UI
+      - "8080:8080"  # Telegram bot
+    volumes:
+      - ./psyche_edge/data:/app/psyche_edge/data
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    command: streamlit run psyche_edge/ui/streamlit_app.py --server.port=8501 --server.address=0.0.0.0
+
+  # Optional: Run swarm in background
+  psyche-edge-swarm-runner:
+    build: .
+    container_name: psyche-edge-runner
+    volumes:
+      - ./psyche_edge/data:/app/psyche_edge/data
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    command: python main.py --population 40 --inject-test-data
+
+  # Optional: Telegram bot service
+  psyche-edge-telegram:
+    build: .
+    container_name: psyche-edge-telegram
+    volumes:
+      - ./psyche_edge/data:/app/psyche_edge/data
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    command: python psyche_edge/integrations/telegram_bot.py

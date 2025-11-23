@@ -1,0 +1,37 @@
+# PsycheEdge 2025 Requirements
+
+# Core Dependencies
+python>=3.10
+
+# Streamlit for UI
+streamlit>=1.31.0
+plotly>=5.18.0
+pandas>=2.1.4
+
+# Agent Framework (we're building custom, but these help)
+langgraph>=0.0.20
+langchain>=0.1.0
+
+# Data Science & ML
+numpy>=1.26.3
+scipy>=1.11.4
+scikit-learn>=1.4.0
+
+# Biometric Integrations
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Telegram Bot
+python-telegram-bot>=20.7
+
+# Data Storage
+sqlalchemy>=2.0.25
+
+# Utilities
+pydantic>=2.5.3
+python-dateutil>=2.8.2
+pytz>=2023.3
+
+# Development
+pytest>=7.4.4
+black>=23.12.1
