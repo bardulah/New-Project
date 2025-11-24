@@ -1,4 +1,4 @@
-"""PsycheEdge Agent Collection"""
+"""PsycheEdge Agent Collection - SINGULARITY EDITION"""
 from .cialdini_scientist import CialdiniScientist
 from .bias_hunter import BiasHunter
 from .tilt_detector import TiltDetector
@@ -9,6 +9,11 @@ from .swarm_spawner import SwarmSpawner
 from .pattern_matcher import PatternMatcher
 from .super_agent import SuperAgent
 
+# SINGULARITY AGENTS
+from .multiverse_explorer import MultiVerseExplorer
+from .infinity_engine import InfinityEngine
+from .dream_reality import DreamStateSimulator, RealityDistortionField
+
 __all__ = [
     'CialdiniScientist',
     'BiasHunter',
@@ -18,5 +23,10 @@ __all__ = [
     'MetaObserver',
     'SwarmSpawner',
     'PatternMatcher',
-    'SuperAgent'
+    'SuperAgent',
+    # SINGULARITY
+    'MultiVerseExplorer',
+    'InfinityEngine',
+    'DreamStateSimulator',
+    'RealityDistortionField'
 ]
